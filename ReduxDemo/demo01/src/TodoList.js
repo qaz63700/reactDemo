@@ -3,9 +3,9 @@ import 'antd/dist/antd.css'
 import TodoListUI from './TodoLIstUI'
 import store from './store'
 //关键代码-------------start
-import {changeInputAction , addItemAction ,deleteItemAction} from './store/actionCreatores'
+import {changeInputAction , addItemAction ,deleteItemAction,getListAction} from './store/actionCreatores'
 //关键代码------------end
-
+import axios from 'axios'
 class TodoList extends Component {
 constructor(props){
     super(props)
@@ -44,6 +44,15 @@ constructor(props){
         console.log(index)
         const action = deleteItemAction(index)
         store.dispatch(action)
+    }
+
+    componentDidMount(){
+        axios.get('https://www.studyinghome.com/mock/5e5128aeca6994415ce3480d/ReactDemo01/Xiaojiejie').then((res)=>{
+            const data=res.data;
+            console.log(res)
+            const action=getListAction(data);
+            store.dispatch(action)
+        })
     }
     //--------关键代码------end
 }
