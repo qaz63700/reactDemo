@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-// import store from './store'
+import React  from 'react';
 import { connect } from 'react-redux';
 const TodoList = (props)=>{
         let {inputValue,inputChange,clickButton,list}=props
@@ -19,8 +18,8 @@ const TodoList = (props)=>{
 }
 const stateToProps=(state)=>{
 	return{
-                inputValue:state.inputValue,
-                list:state.list
+            inputValue:state.inputValue,
+            list:state.list
 	}
 }
 
@@ -34,7 +33,6 @@ const dispatchToProps = (dispatch) =>{
                         dispatch(action)
                 },
                 clickButton(){
-                        // console.log(111)
                         let action = { type:'add_item' }
                         dispatch(action)
                 }
