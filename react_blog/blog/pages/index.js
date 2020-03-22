@@ -1,14 +1,11 @@
 import React,{useState} from 'react'
 import Head from 'next/head'
 import {Col,Row,List} from 'antd'
-import {
-	HomeOutlined,
-	SettingFilled,
-	SmileOutlined,
-	SyncOutlined,
-	LoadingOutlined,
-  } from '@ant-design/icons';
+import {HomeOutlined,SettingFilled,SmileOutlined} from '@ant-design/icons';
 import Header from '../components/Header'
+import Author from '../components/Author'
+import Advert from '../components/Advert'
+import Footer from '../components/Footer';
 import '../static/style/pages/index.css'
 const Home = () => {
 	const  [mylist,setMyList]=useState(
@@ -49,9 +46,11 @@ const Home = () => {
 				/>
 			</Col>
 			<Col className="comm-right" xs={0} sm={0} md={7} lg={5} xl={4}>
-			右侧
+				<Author/>
+				<Advert/>
 			</Col>
 		</Row>
+		<Footer/>
 	</>
 	)
  
