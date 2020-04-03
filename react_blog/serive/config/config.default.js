@@ -50,6 +50,7 @@ module.exports = appInfo => {
     credentials: true,   // 开启认证
     allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS'
   };
+  
   return {
     ...config,
     ...userConfig,
