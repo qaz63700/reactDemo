@@ -1,13 +1,18 @@
-import React from 'react'
+import React from 'react';
 import { BrowserRouter as Router, Route} from "react-router-dom";
+
 import Login from './Login'
 import AdminIndex from './AdminIndex'
 function Main(){
     return (
-        <Router>      
-            <Route path="/login/" exact component={Login} />
-            <Route path="/index/" exact component={AdminIndex} />
+        <Router>
+            <div>
+                <Route path="/" exact component={Login} />
+                <Route path="/index/" component={AdminIndex} />
+            </div>      
+            
+           
         </Router>
     )
 }
-export default Main
+export default  Main
